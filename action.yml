@@ -1,0 +1,12 @@
+name: 'Artifact Content Writer'
+description: 'An action for testing artifat creation'
+inputs:
+  content:
+    required: true
+    description: 'The content to write to the artifact.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.content }}
