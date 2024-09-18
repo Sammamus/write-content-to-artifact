@@ -22,12 +22,12 @@ content = ""
 
 def get_content_filler():
     return {
-        "dummy_data01": str(uuid.uuid4().hex),
-        "dummy_data02": str(uuid.uuid4().hex),
-        "dummy_data03": str(uuid.uuid4().hex),
-        "dummy_data04": str(uuid.uuid4().hex),
-        "dummy_data05": str(uuid.uuid4().hex),
-        "dummy_data06": str(uuid.uuid4().hex),
+        "dummy_data01": str(uuid.uuid4()),
+        "dummy_data02": str(uuid.uuid4()),
+        "dummy_data03": str(uuid.uuid4()),
+        "dummy_data04": str(uuid.uuid4()),
+        "dummy_data05": str(uuid.uuid4()),
+        "dummy_data06": str(uuid.uuid4()),
         "content": content
     }
 
