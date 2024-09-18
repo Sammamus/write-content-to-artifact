@@ -22,12 +22,12 @@ content = ""
 
 def get_content_filler():
     return {
-        "dummy_data01": "dummy_data01",
-        "dummy_data02": "dummy_data02",
-        "dummy_data03": "dummy_data03",
-        "dummy_data04": "dummy_data04",
-        "dummy_data05": "dummy_data05",
-        "dummy_data06": "dummy_data06",
+        "dummy_data01": str(uuid.uuid4().hex),
+        "dummy_data02": str(uuid.uuid4().hex),
+        "dummy_data03": str(uuid.uuid4().hex),
+        "dummy_data04": str(uuid.uuid4().hex),
+        "dummy_data05": str(uuid.uuid4().hex),
+        "dummy_data06": str(uuid.uuid4().hex),
         "content": str(content)
     }
 
@@ -40,11 +40,10 @@ def create_file_content():
     count = 0
 
     while count <= filler_ammount:
-        filler = get_content_filler()
-        file_content.append(filler)
+        file_content.append(get_content_filler())
         count += 1
 
-    logger.info(file_content)
+    print(file_content)
 
     return file_content
 
