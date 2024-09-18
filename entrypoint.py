@@ -49,7 +49,7 @@ def create_file_content():
 
 
 def write_file():
-    file_content = create_file_content
+    file_content = create_file_content()
 
     with open(file_path, 'w') as f:
         f.write(json.dumps({"metadata": file_content}))
