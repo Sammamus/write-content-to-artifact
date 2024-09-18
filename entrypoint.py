@@ -34,9 +34,7 @@ def get_content_filler():
 
 def create_file_content():
 
-    file_content = {
-        "metadata": []
-    }
+    file_content = []
 
     filler_ammount = 10
     count = 0
@@ -52,7 +50,7 @@ def write_file():
     file_content = create_file_content
 
     with open(file_path, 'w') as f:
-        f.write(json.dumps({"data": file_content}))
+        f.write(json.dumps({"metadata": file_content}))
 
     f.close()
 
