@@ -52,7 +52,7 @@ def write_file():
     file_content = create_file_content
 
     with open(file_path, 'w') as f:
-        f.write(json.dumps(file_content, indent=2))
+        f.write(json.dumps({"data": file_content}))
 
     f.close()
 
