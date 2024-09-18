@@ -44,7 +44,7 @@ def create_file_content():
         file_content.append(filler)
         count += 1
 
-    print(file_content)
+    logger.info(file_content)
 
     return file_content
 
