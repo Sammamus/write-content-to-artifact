@@ -13,7 +13,7 @@ import uuid
 workspace_path = "/github/workspace/"
 artifact_folder = "artifacts/"
 file_prefix = "artifact"
-file_uuid = str(uuid.uuid4().hex)
+file_uuid = str(uuid.uuid4()).split('-')[0]
 file_suffix = ".json"
 file_name = f"{file_prefix}_{file_uuid}{file_suffix}"
 file_path = f"{workspace_path}{artifact_folder}{file_name}"
@@ -40,8 +40,10 @@ def create_file_content():
     count = 0
 
     while count <= filler_ammount:
-        file_content['metadata'].append(get_content_filler())
+        file_content.append(get_content_filler())
         count += 1
+
+    print(file_content)
 
     return file_content
 
