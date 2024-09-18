@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("artifactor")
+
 import os
 import re
 import json
@@ -94,7 +98,7 @@ def main():
         exit(0)
 
     except Exception as e:
-        print(e)
+        logger.exception(e)
         exit(1)
 
 
