@@ -40,7 +40,8 @@ def create_file_content():
     count = 0
 
     while count <= filler_ammount:
-        file_content.append(get_content_filler())
+        filler = get_content_filler()
+        file_content.append(filler)
         count += 1
 
     print(file_content)
