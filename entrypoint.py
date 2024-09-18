@@ -4,6 +4,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("artifactor")
 
+import getpass
 import os
 import re
 import json
@@ -43,15 +44,13 @@ def create_file_content():
         file_content.append(get_content_filler())
         count += 1
 
-    print(file_content)
-
     return file_content
 
 
 def write_file():
     file_content = create_file_content()
 
-    with open(file_name, 'w') as f:
+    with open(file_path, 'w') as f:
         f.write(json.dumps({"metadata": file_content}))
 
     f.close()
@@ -91,10 +90,11 @@ def set_output(name, value):
 
 def main():
     try:
+        logger.info(getpass.getuser())
         set_globals()
         write_file()
         set_output("filename", file_name)
-        set_output("filepath", file_name)
+        set_output("filepath", output)
 
         exit(0)
 
