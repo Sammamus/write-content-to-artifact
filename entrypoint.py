@@ -28,7 +28,7 @@ def get_content_filler():
         "dummy_data04": "dummy_data04",
         "dummy_data05": "dummy_data05",
         "dummy_data06": "dummy_data06",
-        "content": content
+        "content": str(content)
     }
 
 
