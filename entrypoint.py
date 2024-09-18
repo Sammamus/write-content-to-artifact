@@ -13,6 +13,7 @@ file_uuid = str(uuid.uuid4().hex)
 file_suffix = ".json"
 file_name = f"{file_prefix}_{file_uuid}{file_suffix}"
 file_path = f"{workspace_path}{artifact_folder}{file_name}"
+output = f"{artifact_folder}{file_name}"
 content = ""
 
 def get_content_filler():
@@ -72,12 +73,23 @@ def set_globals():
 
     if content == "" or content is None:
         raise Exception("Missing content input")
+    
+
+def set_output(name, value):
+    github_output_file = "GITHUB_OUTPUT"
+    if github_output_file in os.environ:
+        with open(os.environ[github_output_file], 'a') as f:
+            print(f"{name}={value}", file=f)
+
+    else:
+        print(f"::set-output name={name}::{value}")
 
 
 def main():
     try:
         set_globals()
         write_file()
+        set_output("filepath", output)
 
         exit(0)
 
