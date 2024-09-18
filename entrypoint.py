@@ -51,7 +51,7 @@ def create_file_content():
 def write_file():
     file_content = create_file_content()
 
-    with open(file_path, 'w') as f:
+    with open(file_name, 'w') as f:
         f.write(json.dumps({"metadata": file_content}))
 
     f.close()
@@ -94,7 +94,7 @@ def main():
         set_globals()
         write_file()
         set_output("filename", file_name)
-        set_output("filepath", output)
+        set_output("filepath", file_name)
 
         exit(0)
 
