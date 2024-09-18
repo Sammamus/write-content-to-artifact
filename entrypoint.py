@@ -93,6 +93,7 @@ def main():
     try:
         set_globals()
         write_file()
+        set_output("filename", file_name)
         set_output("filepath", output)
 
         exit(0)
